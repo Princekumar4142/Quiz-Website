@@ -1,0 +1,449 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Unique & Vibrant Gradient Background */
+    background: linear-gradient(135deg, #a8dadc, #457b9d); /* A cool, inviting blue-green gradient */
+    margin: 0;
+    padding: 20px;
+    color: #2b2d42; /* Deep charcoal for main text for contrast */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    /* Header Background & Shadow */
+    background-color: rgba(241, 250, 238, 0.95); /* A very light, creamy green for header */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger, more prominent shadow */
+    border: 1px solid #e0f2f7; /* Soft border */
+}
+
+h1 {
+    color: #1d3557; /* Dark, rich blue for main headings */
+    margin-bottom: 10px;
+    font-size: 2.8em; /* Even larger main title */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* More pronounced text shadow */
+}
+
+.intro {
+    font-size: 1.2em;
+    color: #457b9d; /* Matches a color from the gradient for cohesion */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+h2 {
+    color: #1d3557; /* Consistent dark blue for subheadings */
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.category {
+    background-color: rgba(241, 250, 238, 0.98); /* Slightly more opaque creamy green for cards */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #cce7ed; /* A soft blue-green border */
+}
+
+.category:hover {
+    transform: translateY(-10px); /* More pronounced lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.category h2 {
+    color: #2b2d42; /* Dark charcoal for category titles */
+    margin-top: 0;
+    border-bottom: 2px solid #a8dadc; /* Matches a color from the gradient */
+    padding-bottom: 12px;
+    font-size: 1.6em;
+}
+
+.category p {
+    color: #457b9d; /* Medium blue-green for descriptions */
+    min-height: 60px;
+    font-size: 1em;
+}
+
+.difficulty {
+    margin-top: 20px;
+}
+
+.difficulty-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #cedde0; /* Softer dashed line */
+    font-size: 0.95em;
+    color: #2b2d42;
+}
+
+.difficulty-option:last-child {
+    border-bottom: none;
+}
+
+.start-btn {
+    background-color: #e63946; /* A striking red for action buttons */
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.start-btn:hover {
+    background-color: #d12e3e; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+    display: none;
+    /* Quiz Section Background & Shadow */
+    background-color: rgba(241, 250, 238, 0.98); /* Creamy green, similar to categories */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid #cce7ed;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #a8dadc; /* Matches a color from the gradient */
+    font-weight: 600;
+    color: #1d3557; /* Dark blue for header text */
+    font-size: 1.1em;
+}
+
+.question-count {
+    color: #457b9d;
+}
+
+.score {
+    color: #2a9d8f; /* A vibrant teal for the score */
+    font-weight: bold;
+}
+
+.timer {
+    color: #e63946; /* The striking red for urgency */
+    font-weight: bold;
+}
+
+#quiz-category {
+    color: #1d3557; /* Dark blue for quiz category title */
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.question-text {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #2b2d42; /* Deep charcoal for question text */
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px; /* Increased gap for better touch targets */
+    margin-bottom: 30px;
+}
+
+.option {
+    padding: 16px; /* More padding for options */
+    border: 1px solid #a8dadc; /* Soft blue-green border for options */
+    border-radius: 10px; /* More rounded option corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fcfdff; /* Very light background for options */
+    font-size: 1.1em;
+    color: #2b2d42;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for options */
+}
+
+.option:hover {
+    background-color: #edf5f5; /* Lighter background on hover */
+    border-color: #457b9d; /* Darker blue-green border on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.option.selected {
+    background-color: #457b9d; /* Dark blue-green when selected */
+    color: white;
+    border-color: #457b9d;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.option.correct {
+    background-color: #2a9d8f; /* Vibrant teal for correct */
+    color: white;
+    border-color: #2a9d8f;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+}
+
+.option.incorrect {
+    background-color: #e63946; /* Striking red for incorrect */
+    color: white;
+    border-color: #e63946;
+    box-shadow: 0 4px 8px rgba(230, 57, 70, 0.3);
+}
+
+.submit-btn, .next-btn {
+    background-color: #1d3557; /* Dark blue for main action buttons */
+    color: white;
+    border: none;
+    padding: 14px 30px; /* Larger buttons */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 0 auto;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.submit-btn:hover {
+    background-color: #2b2d42; /* Darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.submit-btn:disabled {
+    background-color: #a8dadc; /* Lighter blue-green when disabled */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.next-btn {
+    background-color: #2a9d8f; /* Vibrant teal for next button */
+    display: none;
+    margin-top: 25px;
+}
+
+.next-btn:hover {
+    background-color: #217e71;
+}
+
+/* Results Container Styles */
+.results-container {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(241, 250, 238, 0.98); /* Creamy green for results */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid #cce7ed;
+}
+
+.results-container h2 {
+    color: #1d3557;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.score-display {
+    font-size: 2.2em;
+    color: #2a9d8f; /* Vibrant teal for final score */
+    margin: 25px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#result-message {
+    font-size: 1.2em;
+    color: #457b9d;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.certificate {
+    margin-top: 35px;
+    padding: 25px;
+    border: 3px dashed #e63946; /* Striking red dashed border for certificate */
+    border-radius: 12px;
+    background-color: #f1faee; /* Lighter creamy green for certificate background */
+    color: #2b2d42;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.certificate h3 {
+    color: #1d3557;
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 1px solid #a8dadc;
+    padding-bottom: 10px;
+}
+
+.certificate p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+.certificate p span {
+    font-weight: 600;
+    color: #2b2d42;
+}
+
+.back-btn {
+    background-color: #a8dadc; /* Soft blue-green for back button */
+    color: #1d3557; /* Dark blue text */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    margin-top: 30px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover {
+    background-color: #457b9d; /* Darker blue-green on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    .intro {
+        font-size: 1.05em;
+    }
+    .categories {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .category {
+        padding: 20px;
+    }
+    .category h2 {
+        font-size: 1.4em;
+    }
+    .quiz-container {
+        padding: 25px;
+    }
+    #quiz-category {
+        font-size: 1.8em;
+    }
+    .question-text {
+        font-size: 1.2em;
+    }
+    .option {
+        padding: 14px;
+        font-size: 1.05em;
+    }
+    .submit-btn, .next-btn, .back-btn {
+        padding: 12px 25px;
+        font-size: 1.05em;
+    }
+    .results-container {
+        padding: 25px;
+    }
+    .score-display {
+        font-size: 2em;
+    }
+    #result-message {
+        font-size: 1.1em;
+    }
+    .certificate {
+        padding: 20px;
+    }
+    .certificate h3 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .intro {
+        font-size: 0.95em;
+    }
+    .category h2 {
+        font-size: 1.3em;
+    }
+    .quiz-container {
+        padding: 15px;
+    }
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .question-count, .score, .timer {
+        font-size: 1em;
+    }
+    #quiz-category {
+        font-size: 1.6em;
+    }
+    .question-text {
+        font-size: 1.1em;
+    }
+    .option {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+    .submit-btn, .next-btn, .back-btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+    .results-container {
+        padding: 15px;
+    }
+    .score-display {
+        font-size: 1.8em;
+    }
+    #result-message {
+        font-size: 1em;
+    }
+    .certificate {
+        padding: 15px;
+    }
+    .certificate h3 {
+        font-size: 1.4em;
+    }
+}

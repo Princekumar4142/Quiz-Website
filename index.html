@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="category-selection">
+            <header>
+                <h1>INTERACTIVE QUIZ APPLICATION</h1>
+                <p class="intro">Challenge yourself with our engaging quiz platform featuring multiple categories and interactive experiences. Test your knowledge and discover new facts!</p>
+                <h2>Choose Your Adventure</h2>
+                <p>Select a category to begin your quiz experience</p>
+            </header>
+
+            <div class="categories">
+                <div class="category">
+                    <h2>Science & Technology</h2>
+                    <p>Explore the wonders of science and cutting-edge technology.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="science" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="science" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>World History</h2>
+                    <p>Journey through time and discover historical events.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="history" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="history" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Sports & Athletics</h2>
+                    <p>Test your knowledge of sports and athletic achievements.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="sports" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="sports" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Entertainment & Pop Culture</h2>
+                    <p>Movies, music, celebrities, and popular culture.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="entertainment" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="entertainment" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Geography & Nature</h2>
+                    <p>Explore countries, capitals, and natural wonders.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="geography" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="geography" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Art & Literature</h2>
+                    <p>Dive into the world of art, books, and creativity.</p>
+                    <div class="difficulty">
+                        <div class="difficulty-option">
+                            <span>Medium (3 Questions)</span>
+                            <button class="start-btn" data-category="art" data-difficulty="medium">Start Quiz</button>
+                        </div>
+                        <div class="difficulty-option">
+                            <span>Full (All Questions)</span>
+                            <button class="start-btn" data-category="art" data-difficulty="full">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-container" class="quiz-container">
+            <div class="quiz-header">
+                <div class="question-count">Question <span id="current-question">1</span> of <span id="total-questions">5</span></div>
+                <div class="score">Score: <span id="current-score">0</span></div>
+                <div class="timer">Time: <span id="time">00:00</span></div>
+            </div>
+            <h2 id="quiz-category">Category</h2>
+            <div class="question-text" id="question-text">Question text goes here</div>
+            <div class="answer-options" id="answer-options">
+                </div>
+            <button id="submit-btn" class="submit-btn" disabled>Submit Answer</button>
+            <button id="next-btn" class="next-btn">Next Question</button>
+        </div>
+
+        <div id="results-container" class="results-container">
+            <h2>Quiz Completed!</h2>
+            <div class="score-display">Your Score: <span id="final-score">0</span>/<span id="max-score">0</span></div>
+            <p id="result-message">Great job!</p>
+            
+            <div class="certificate">
+                <h3>Certificate of Completion</h3>
+                <p>This certifies that you have successfully completed the <span id="cert-category">Category</span> quiz.</p>
+                <p>Date: <span id="cert-date">June 4, 2025</span></p>
+                <p>Score: <span id="cert-score">0</span>%</p>
+                <p>Presented by: CodeTech Internship Program</p>
+            </div>
+            
+            <button id="back-btn" class="back-btn">Back to Categories</button>
+        </div>
+    </div>
+    
+    <script src="quiz.js"></script>
+</body>
+</html>
